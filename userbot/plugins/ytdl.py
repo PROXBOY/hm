@@ -30,7 +30,7 @@ from . import CMD_HELP, hmention, progress
 @bot.on(admin_cmd(pattern="yt(a|v) (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="yt(a|v) (.*)", allow_sudo=True))
 async def download_video(v_url):
-    """ For .ytdl command, download media from YouTube and many other sites. """
+    """For .ytdl command, download media from YouTube and many other sites."""
     url = v_url.pattern_match.group(2)
     ytype = v_url.pattern_match.group(1).lower()
     v_url = await edit_or_reply(v_url, "`Preparing to download...`")
@@ -167,7 +167,7 @@ async def download_video(v_url):
 @bot.on(admin_cmd(pattern="yts (.*)"))
 @bot.on(sudo_cmd(pattern="yts (.*)", allow_sudo=True))
 async def yt_search(video_q):
-    """ For .yts command, do a YouTube search from Telegram. """
+    """For .yts command, do a YouTube search from Telegram."""
     query = video_q.pattern_match.group(1)
     result = ""
     if not Config.YOUTUBE_API_KEY:
@@ -190,7 +190,7 @@ async def yt_search(video_q):
 async def youtube_search(
     query, order="relevance", token=None, location=None, location_radius=None
 ):
-    """ Do a YouTube search. """
+    """Do a YouTube search."""
     youtube = build(
         "youtube", "v3", developerKey=Config.YOUTUBE_API_KEY, cache_discovery=False
     )

@@ -43,7 +43,7 @@ combot_stickers_url = "https://combot.org/telegram/stickers?q="
 @bot.on(admin_cmd(outgoing=True, pattern="kang ?(.*)"))
 @bot.on(sudo_cmd(pattern="kang ?(.*)", allow_sudo=True))
 async def kang(args):
-    """ For .kang command, kangs stickers or creates new ones. """
+    """For .kang command, kangs stickers or creates new ones."""
     user = await bot.get_me()
     if not user.username:
         try:
@@ -355,7 +355,7 @@ async def cb_sticker(event):
 
 
 async def resize_photo(photo):
-    """ Resize the given photo to 512x512 """
+    """Resize the given photo to 512x512"""
     image = Image.open(photo)
     if (image.width and image.height) < 512:
         size1 = image.width

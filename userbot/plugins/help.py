@@ -149,7 +149,7 @@ async def info(event):
 @bot.on(admin_cmd(outgoing=True, pattern="info ?(.*)"))
 @bot.on(sudo_cmd(pattern="info ?(.*)", allow_sudo=True))
 async def info(event):
-    """ For .info command,"""
+    """For .info command,"""
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:

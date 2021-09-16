@@ -154,7 +154,7 @@ async def who(event):
 
 
 async def get_user(event):
-    """ Get the user from argument or replied message. """
+    """Get the user from argument or replied message."""
     if event.reply_to_msg_id and not event.pattern_match.group(1):
         previous_message = await event.get_reply_message()
         replied_user = await event.client(
@@ -183,7 +183,7 @@ async def get_user(event):
 
 
 async def fetch_info(replied_user, event):
-    """ Get details from the User object. """
+    """Get details from the User object."""
     replied_user_profile_photos = await event.client(
         GetUserPhotosRequest(
             user_id=replied_user.user.id, offset=42, max_id=0, limit=80
@@ -237,7 +237,7 @@ async def fetch_info(replied_user, event):
 @bot.on(admin_cmd(pattern="link(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="link(?: |$)(.*)", allow_sudo=True))
 async def permalink(mention):
-    """ For .link command, generates a link to the user's PM with a custom text. """
+    """For .link command, generates a link to the user's PM with a custom text."""
     user, custom = await get_user_from_event(mention)
     if not user:
         return
@@ -251,7 +251,7 @@ async def permalink(mention):
 
 
 async def get_user_from_event(event):
-    """ Get the user from argument or replied message. """
+    """Get the user from argument or replied message."""
     args = event.pattern_match.group(1).split(":", 1)
     extra = None
     if event.reply_to_msg_id and len(args) != 2:

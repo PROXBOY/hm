@@ -45,7 +45,7 @@ async def kakashi(magisk):
 @bot.on(admin_cmd(outgoing=True, pattern=r"device(?: |$)(\S*)"))
 @bot.on(sudo_cmd(pattern=r"device(?: |$)(\S*)", allow_sudo=True))
 async def device_info(request):
-    """ get android device basic info from its codename """
+    """get android device basic info from its codename"""
     textx = await request.get_reply_message()
     codename = request.pattern_match.group(1)
     if codename:
@@ -78,7 +78,7 @@ async def device_info(request):
 @bot.on(admin_cmd(outgoing=True, pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)"))
 @bot.on(sudo_cmd(pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def codename_info(request):
-    """ search for android codename """
+    """search for android codename"""
     textx = await request.get_reply_message()
     brand = request.pattern_match.group(1).lower()
     device = request.pattern_match.group(2).lower()
@@ -123,7 +123,7 @@ async def codename_info(request):
 @bot.on(admin_cmd(outgoing=True, pattern=r"aspecs(?: |)([\S]*)(?: |)([\s\S]*)"))
 @bot.on(sudo_cmd(pattern=r"aspecs(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def devices_specifications(request):
-    """ Mobile devices specifications """
+    """Mobile devices specifications"""
     textx = await request.get_reply_message()
     brand = request.pattern_match.group(1).lower()
     device = request.pattern_match.group(2).lower()
@@ -186,7 +186,7 @@ async def devices_specifications(request):
 @bot.on(admin_cmd(outgoing=True, pattern=r"twrp(?: |$)(\S*)"))
 @bot.on(sudo_cmd(pattern=r"twrp(?: |$)(\S*)", allow_sudo=True))
 async def twrp(request):
-    """ get android device twrp """
+    """get android device twrp"""
     textx = await request.get_reply_message()
     device = request.pattern_match.group(1)
     if device:

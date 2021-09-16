@@ -82,7 +82,7 @@ async def purgeme(delme):
 @bot.on(sudo_cmd(allow_sudo=True, pattern="del$"))
 @errors_handler
 async def delete_it(delme):
-    """ For .del command, delete the replied message. """
+    """For .del command, delete the replied message."""
     msg_src = await delme.get_reply_message()
     if delme.reply_to_msg_id:
         try:
